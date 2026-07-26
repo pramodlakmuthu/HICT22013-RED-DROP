@@ -92,6 +92,57 @@
             <button onclick="showView('process')" class="nav-btn hovert:text-brand-blue transition">Process</button>
             </nav>
 
+            <!-- ....... Login Button ....... -->
+             <div id="authActionsLoggedOut" class="flex items-center space-x-3">
+                <button onclick="showView('login')" class="bg-brand-blue hover:bg-black-600 text-white text-xs font-semibold px-5 py-2 rounded-full transition shadow-lg shadow-blue-500/20">Login</button>
+             </div>
+
+             <div id="authActionsLoggedIn" class="hidden flex items-center space-x-3">
+                <button onclick="toggleAuth(false)" class="bg-brand-blue hover:bg-black-600 text-white text-xs font-semibold px-5 py-2 rounded-full transition shadow-lg shadow-blue-500/20">Logout</button>
+
+                <!-- ...... user name display after login ......  -->
+                <div class="flex  items-center space-x-1.5 bg-gray-900 border border-gray-800 px-3 py-1 rounded-full text-xs text-gray-300">
+                    <i class="fa-solid fa-user text-purple-400 text-[10px]">
+                    </i>
+                    <span id="userNameDisplay">User</span>
+                    </div>
+                </div>
+            </div>
+     </header>
+
+     <!-- .................... CONTENT ..................... -->
+      <main class="flex-grow flex flex-col justify-center">
+
+        <!-- ........... background image ............. -->
+         <section id="view-home" class="view-section hero-bg min-h-[calc(100vh-65px)] flex items-center px-6 py-12 relative">
+             <div class="max-w-4xl mx-auto space-y-8 text-left">
+
+                <!-- ............. theme ............. -->
+                 <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                    One Drop Can <br/> Save <span class="text-brand-lightBlue">Three Lives</span>
+                 </h1>
+                 
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+         </section>
+
+
+
+
+
+
+
+
 
 
 

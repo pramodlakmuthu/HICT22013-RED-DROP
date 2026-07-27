@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedDrop</title>
-     <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome Icons -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
- 
-     <!-- ..... Tailwind CSS configuration,fonts and color variables ..... -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ..... Tailwind CSS configuration,fonts and color variables ..... -->
     <script>
         tailwind.config = {
             theme: {
@@ -22,12 +24,12 @@
                     colors: {
                         brand: {
                             blue: '#3B82F6',
-                        lightBlue: '#60A5FA',
-                    darkBg:'#05070E',
-                cardBg:'#0B1120',
-            cardBorder:'#1E293B',
-        redAccent:'#E63946'                        
-     }
+                            lightBlue: '#60A5FA',
+                            darkBg: '#05070E',
+                            cardBg: '#0B1120',
+                            cardBorder: '#1E293B',
+                            redAccent: '#E63946'
+                        }
                     }
                 }
             }
@@ -35,46 +37,58 @@
     </script>
 
     <style>
-        .hero-bg{
-            background:radial-gradient(circle at 50% 50%,rgba(180,20,40,0.25)0%,rgba(5,7,14,0.95)75%),
-            url('https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=1920&auto=format&fit=crop')center/cover no-repeat;
+        .hero-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(180, 20, 40, 0.25)0%, rgba(5, 7, 14, 0.95)75%),
+                url('https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=1920&auto=format&fit=crop')center/cover no-repeat;
         }
 
         /* Glowing Circle Shadows for Process Section */
-        .glow-blue{box-shadow:0 0 35px 5px rgba(59,130,246,0.5);}
-        .glow-orange{box-shadow:0 0 35px 5px rgba(245,158,11,0.5);}
-        .glow-purple{box-shadow:0 0 35px 5px rgba(168,85.247,0.5); }
-        .glow-teal{box-shadow:0 0 35px 5px rgba(20,184,166,0.5);}
+        .glow-blue {
+            box-shadow: 0 0 35px 5px rgba(59, 130, 246, 0.5);
+        }
+
+        .glow-orange {
+            box-shadow: 0 0 35px 5px rgba(245, 158, 11, 0.5);
+        }
+
+        .glow-purple {
+            box-shadow: 0 0 35px 5px rgba(168, 85.247, 0.5);
+        }
+
+        .glow-teal {
+            box-shadow: 0 0 35px 5px rgba(20, 184, 166, 0.5);
+        }
 
         /* Red to Blue Auth Button Gradient */
-    .btn-gradient {
-      background: linear-gradient(90deg, #2563EB 0%, #7C3AED 50%, #DC2626 100%);
-    }
+        .btn-gradient {
+            background: linear-gradient(90deg, #2563EB 0%, #7C3AED 50%, #DC2626 100%);
+        }
     </style>
 
 </head>
 
-<body class="bg-[#05070E] text-gray-100 font-sans min-h-screen flex flex-col selection:bg-blue-500 selection:text-white"> 
+<body
+    class="bg-[#05070E] text-gray-100 font-sans min-h-screen flex flex-col selection:bg-blue-500 selection:text-white">
 
     <!-- ....... Navigation Bar ....... -->
-     <header class="w-full bg-[#05070E]/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-900 px-6 py-3">
+    <header class="w-full bg-[#05070E]/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-900 px-6 py-3">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
 
             <!-- ........ Logo ........ -->
 
             <!-- ...... click logo -- go home ....... -->
-             <div class="flex items-center space-x-2.5 cursor-pointer"
-             onclick="showView('home')">
+            <div class="flex items-center space-x-2.5 cursor-pointer" onclick="showView('home')">
 
-             <!-- ........ in circle red outline ........ -->
-             <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-red-950/80 border border-red-800">
+                <!-- ........ in circle red outline ........ -->
+                <div
+                    class="relative flex items-center justify-center w-8 h-8 rounded-full bg-red-950/80 border border-red-800">
 
-                <!-- ...... animated blood drop ....... -->
-                <i class="fa-solid fa-droplet  text-red-500 text-sm">
-                </i>
+                    <!-- ...... animated blood drop ....... -->
+                    <i class="fa-solid fa-droplet  text-red-500 text-sm">
+                    </i>
 
-                <!-- ...... animated dot ...... -->
-                <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-red-500 rounded-full animated-ping"></span>
+                    <!-- ...... animated dot ...... -->
+                    <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-red-500 rounded-full animated-ping"></span>
                 </div>
                 <div class="flex flex-col leading-none">
                     <span class="text-lg font-extrabold tracking-tight text-white">Red
@@ -85,73 +99,86 @@
             </div>
 
             <!-- .......... NAVIGATION CAPSULE ........... -->
-             <nav class="hidden md:flex items-center bg-black/60 border border-gray-800 rounded-full px-4 py-1.5 space-x-6 text-sm font-medium text-gray-300 shadow-inner">
-            <button onclick="showView('home')" class="nav-btn text-white hovert:text-brand-blue transition">Home</button>
-            <button onclick="showView('about')" class="nav-btn  hovert:text-brand-blue transition">About</button>
-            <button onclick="showView('eligibility')"class="nav-btn hovert:text-brand-blue transition">Eligibility</button>
-            <button onclick="showView('process')" class="nav-btn hovert:text-brand-blue transition">Process</button>
+            <nav
+                class="hidden md:flex items-center bg-black/60 border border-gray-800 rounded-full px-4 py-1.5 space-x-6 text-sm font-medium text-gray-300 shadow-inner">
+                <button onclick="showView('home')"
+                    class="nav-btn text-white hovert:text-brand-blue transition">Home</button>
+                <button onclick="showView('about')" class="nav-btn  hovert:text-brand-blue transition">About</button>
+                <button onclick="showView('eligibility')"
+                    class="nav-btn hovert:text-brand-blue transition">Eligibility</button>
+                <button onclick="showView('process')" class="nav-btn hovert:text-brand-blue transition">Process</button>
             </nav>
 
             <!-- ....... Login Button ....... -->
-             <div id="authActionsLoggedOut" class="flex items-center space-x-3">
-                <button onclick="showView('login')" class="bg-brand-blue hover:bg-black-600 text-white text-xs font-semibold px-6 py-2 rounded-full transition shadow-lg shadow-blue-500/20">Login</button>
-             </div>
+            <div id="authActionsLoggedOut" class="flex items-center space-x-3">
+                <button onclick="showView('login')"
+                    class="bg-brand-blue hover:bg-black-600 text-white text-xs font-semibold px-6 py-2 rounded-full transition shadow-lg shadow-blue-500/20">Login</button>
+            </div>
 
-             <div id="authActionsLoggedIn" class="hidden flex items-center space-x-3">
-                <button onclick="toggleAuth(false)" class="bg-brand-blue hover:bg-black-600 text-white text-xs font-semibold px-6 py-2 rounded-full transition shadow-lg shadow-blue-500/20">Logout</button>
+            <div id="authActionsLoggedIn" class="hidden flex items-center space-x-3">
+                <button onclick="toggleAuth(false)"
+                    class="bg-brand-blue hover:bg-black-600 text-white text-xs font-semibold px-6 py-2 rounded-full transition shadow-lg shadow-blue-500/20">Logout</button>
 
                 <!-- ...... user name display after login ......  -->
-                <div class="flex  items-center space-x-1.5 bg-gray-900 border border-gray-800 px-3 py-1 rounded-full text-xs text-gray-300">
+                <div
+                    class="flex  items-center space-x-1.5 bg-gray-900 border border-gray-800 px-3 py-1 rounded-full text-xs text-gray-300">
                     <i class="fa-solid fa-user text-purple-400 text-[10px]">
                     </i>
                     <span id="userNameDisplay">User</span>
                     </div>
                 </div>
             </div>
-     </header>
+        </div>
+    </header>
 
-     <!-- .................... CONTENT ..................... -->
-      <main class="flex-grow flex flex-col justify-center">
+    <!-- .................... CONTENT ..................... -->
+    <main class="flex-grow flex flex-col justify-center">
 
         <!-- ........... background image ............. -->
-         <section id="view-home" class="view-section hero-bg min-h-[calc(100vh-65px)] flex items-center px-6 py-12 relative">
-             <div class="max-w-4xl mx-auto space-y-8 text-left">
+        <section id="view-home"
+            class="view-section hero-bg min-h-[calc(100vh-65px)] flex items-center px-6 py-12 relative">
+            <div class="max-w-4xl mx-auto space-y-8 text-left">
 
                 <!-- ............. theme ............. -->
-                 <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-tight">
-                    One Drop Can <br/> Save <span class="text-brand-lightBlue">Three Lives</span>
-                 </h1>
+                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                    One Drop Can <br /> Save <span class="text-brand-lightBlue">Three Lives</span>
+                </h1>
 
-                 <!-- ......... text part of middle ......... -->
-                  <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-                    Blood donation is a simple act of kindness that can make a huge difference. Join Red Drop and help save lives today.
-                    </p>
+                <!-- ......... text part of middle ......... -->
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                    Blood donation is a simple act of kindness that can make a huge difference. Join Red Drop and help
+                    save lives today.
+                </p>
 
-                    <!-- .......... check if you can donate button ............ -->
-                     <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <button onclick="showView('eligibility')" class="bg-brand-blue hover:bg-blue-600 text-white font-medium text-sm px-6 py-3 rounded-full transition shadow-lg shadow-blue-500/30"> Check if you can donate </button>
+                <!-- .......... check if you can donate button ............ -->
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <button onclick="showView('eligibility')"
+                        class="bg-brand-blue hover:bg-blue-600 text-white font-medium text-sm px-6 py-3 rounded-full transition shadow-lg shadow-blue-500/30">
+                        Check if you can donate </button>
 
-                      <!-- ......... learn more button ......... --> 
-                        <button onclick="showView('about')" class="border border-blue-500/40 hover:border-blue-400 text-blue-300 font-medium text-sm px-6 py-3 rounded-full bg-blue-950/20 hover:bg-blue-900/30 transition"> Learn More</button>
-                        </div>
+                    <!-- ......... learn more button ......... -->
+                    <button onclick="showView('about')"
+                        class="border border-blue-500/40 hover:border-blue-400 text-blue-300 font-medium text-sm px-6 py-3 rounded-full bg-blue-950/20 hover:bg-blue-900/30 transition">
+                        Learn More</button>
+                </div>
 
-<!-- ............. visual text ............. -->
- <div class="flex flex-wrap items-center gap-6 pt-4 text-xs fint-medium text-gray-400">
-    <div class="flex items-center space-x-2">
-        <i class="fa-solid fa-check text-blue-400">
-            </i>
-            <span>1 donation = up to 3 lives saved </span>
-    </div>
+                <!-- ............. visual text ............. -->
+                <div class="flex flex-wrap items-center gap-6 pt-4 text-xs fint-medium text-gray-400">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-blue-400">
+                        </i>
+                        <span>1 donation = up to 3 lives saved </span>
+                    </div>
 
-    <div class="flex items-center space-x-2">
-        <i class="fa-regular fa-clock text-gray-400"></i>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-regular fa-clock text-gray-400"></i>
 
-        <span>Takes only 30-45 minutes</span>
-    </div>
+                        <span>Takes only 30-45 minutes</span>
+                    </div>
 
-</div>
+                </div>
             </div>
-         </section>
+        </section>
 
 
 
@@ -167,15 +194,17 @@
 
 
 
- <!-- ................... bodini start here .....................-->
-<!-- 2. LOGIN VIEW -->
-    <section id="view-login" class="view-section hidden px-4 py-12 flex justify-center items-center">
-      <div class="w-full max-w-lg bg-[#0B1120] border border-red-900/40 rounded-2xl p-8 sm:p-10 shadow-2xl space-y-6 text-center">
-        <div class="space-y-1">
-          <h2 class="text-3xl font-extrabold text-red-500">Red Drop</h2>
-          <h3 class="text-lg font-semibold text-gray-200">Welcome Back</h3>
-          <p class="text-xs text-gray-400">Login to check your eligibility and reserve your donation slot.</p>
-        </div>
+        <!-- ................... bodini start here .....................-->
+        <!-- 2. LOGIN VIEW -->
+        <section id="view-login" class="view-section hidden px-4 py-12 flex justify-center items-center">
+            <div
+                class="w-full max-w-lg bg-[#0B1120] border border-red-900/40 rounded-2xl p-8 sm:p-10 shadow-2xl space-y-6 text-center">
+                <div class="space-y-1">
+                    <h2 class="text-3xl font-extrabold text-red-500">Red Drop</h2>
+                    <h3 class="text-lg font-semibold text-gray-200">Welcome Back</h3>
+                    <p class="text-xs text-gray-400">Login to check your eligibility and reserve your donation slot.</p>
+                </div>
+
 
 
 

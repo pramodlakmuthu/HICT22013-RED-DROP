@@ -302,6 +302,39 @@
                     <span class="font-bold"><i class="fa-solid fa-shield-halved mr-1"></i> Medical Safety:</span>
                     Complete all fields to check if you are eligible to donate today.
                 </div>
+                <form onsubmit="handleEligibilitySubmit(event)" class="space-y-5 text-sm text-gray-300">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">1. Age (Years)</label>
+                            <input type="number" id="eligAge" required value="24" min="15" max="80"
+                                class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 text-xs focus:outline-none focus:border-blue-500 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">2. Body Weight (kg)</label>
+                            <input type="number" id="eligWeight" required value="62" min="30" max="200"
+                                class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 text-xs focus:outline-none focus:border-blue-500 transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">3. Donor Type</label>
+                            <select id="eligDonorType" required
+                                class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 text-xs focus:outline-none focus:border-blue-500 transition">
+                                <option value="first_time">First-Time Donor (Max Age 55)</option>
+                                <option value="regular" selected>Regular / Repeat Donor (Max Age 60)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">4. Date of Last Donation (Optional)</label>
+                            <input type="date" id="eligLastDonation"
+                                class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 text-xs focus:outline-none focus:border-blue-500 transition">
+                        </div>
+                    </div>
+
 
 
 

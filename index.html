@@ -377,8 +377,132 @@
             </div>
         </section>
 
+        <!-- 5. BLOOD BANK LOCATOR VIEW(my part) -->
+        <section id="view-locator" class="view-section hidden px-4 py-12 flex justify-center items-center">
+            <div
+                class="w-full max-w-3xl bg-[#0B1120] border border-blue-900/40 rounded-2xl p-6 sm:p-10 shadow-2xl space-y-6">
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-blue-400">Blood Bank Locator</h2>
+                    <p class="text-xs text-gray-400">Select any district in Sri Lanka to find nearby blood banks and
+                        reserve a slot.</p>
+                    </d1iv>
+                    <div
+                        class="bg-blue-950/30 border border-blue-800/40 rounded-xl p-3 text-center text-xs text-blue-200">
+                        Note: Please ensure you have completed the eligibility check before reserving.
+                    </div>
+                    <!-- District Selection Filter -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-gray-300">Choose District (All 25 Districts
+                            Available)</label>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <select id="districtSelect" onchange="filterBloodBanks()"
+                                class="flex-grow bg-[#161F33] border border-blue-500/50 rounded-xl px-4 py-3 text-sm text-gray-100 outline-none focus:border-blue-400">
+                                <option value="Ampara">Ampara</option>
+                                <option value="Anuradhapura">Anuradhapura</option>
+                                <option value="Badulla">Badulla</option>
+                                <option value="Batticaloa">Batticaloa</option>
+                                <option value="Colombo">Colombo</option>
+                                <option value="Galle">Galle</option>
+                                <option value="Gampaha" selected>Gampaha</option>
+                                <option value="Hambantota">Hambantota</option>
+                                <option value="Jaffna">Jaffna</option>
+                                <option value="Kalutara">Kalutara</option>
+                                <option value="Kandy">Kandy</option>
+                                <option value="Kegalle">Kegalle</option>
+                                <option value="Kilinochchi">Kilinochchi</option>
+                                <option value="Kurunegala">Kurunegala</option>
+                                <option value="Mannar">Mannar</option>
+                                <option value="Matale">Matale</option>
+                                <option value="Matara">Matara</option>
+                                <option value="Monaragala">Monaragala</option>
+                                <option value="Mullaitivu">Mullaitivu</option>
+                                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                <option value="Polonnaruwa">Polonnaruwa</option>
+                                <option value="Puttalam">Puttalam</option>
+                                <option value="Ratnapura">Ratnapura</option>
+                                <option value="Trincomalee">Trincomalee</option>
+                                <option value="Vavuniya">Vavuniya</option>
+                            </select>
+                            <button onclick="filterBloodBanks()"
+                                class="bg-brand-blue hover:bg-blue-600 text-white font-bold text-xs px-6 py-3 rounded-xl transition shadow-md whitespace-nowrap">
+                                Search District
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <button onclick="showView('eligibility')"
+                            class="bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs px-4 py-2 rounded-full transition">
+                            Back to Eligibility Checker
+                        </button>
+                    </div>
+                    <!-- Dynamic Blood Bank Container -->
+                    <div id="bloodBankContainer" class="space-y-4 pt-2">
+                        <!-- Dynamically populated via JavaScript -->
+                    </div>
+                </div>
+        </section>
+        <!-- 6. DONATION PROCESS VIEW -->
+        <section id="view-process" class="view-section hidden px-4 py-16">
+            <div class="max-w-6xl mx-auto space-y-16 text-center">
 
-<!-- ...............meken pallehata code insert krenna epa .....................-->
+                <h2 class="text-4xl font-extrabold text-blue-400">Donation Process</h2>
+
+                <!-- Process Steps Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pt-6">
+
+                    <div class="flex flex-col items-center space-y-4">
+                        <div
+                            class="w-24 h-24 rounded-full bg-blue-600 glow-blue flex items-center justify-center text-white text-3xl mb-2 transition transform hover:scale-105">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-100 text-base">Registration</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed max-w-[180px]">Quick form & medical history</p>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-4">
+                        <div
+                            class="w-24 h-24 rounded-full bg-amber-500 glow-orange flex items-center justify-center text-white text-3xl mb-2 transition transform hover:scale-105">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-100 text-base">Screening</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed max-w-[180px]">Health check-up & hemoglobin test
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-4">
+                        <div
+                            class="w-24 h-24 rounded-full bg-purple-500 glow-purple flex items-center justify-center text-white text-3xl mb-2 transition transform hover:scale-105">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-100 text-base">Donation</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed max-w-[180px]">350-450ml of blood taken safely
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-4">
+                        <div
+                            class="w-24 h-24 rounded-full bg-teal-400 glow-teal flex items-center justify-center text-white text-3xl mb-2 transition transform hover:scale-105">
+                            <i class="fa-solid fa-cookie-bite"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-100 text-base">Refreshment</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed max-w-[180px]">Rest, snacks & hydration</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <!-- ...............meken pallehata code insert krenna epa .....................-->
         <script src="script.js"></script>
 </body>
 

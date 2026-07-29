@@ -615,6 +615,17 @@
                 <p id="resModalBankTitle" class="text-xs text-gray-300 font-semibold">Gampaha General Hospital Blood
                     Bank</p>
             </div>
+            <form onsubmit="handleReservationSubmit(event)" class="space-y-4 text-xs text-gray-300">
+                <div>
+                    <label class="block font-semibold mb-1">Full Name</label>
+                    <input type="text" id="resFullName" required placeholder="Enter your full name"
+                        class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 focus:outline-none focus:border-blue-500 transition">
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">National ID (NIC) Number</label>
+                    <input type="text" id="resNIC" required placeholder="e.g. 199812345678 or 981234567V"
+                        class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 focus:outline-none focus:border-blue-500 transition">
+                </div>
 
 
 
@@ -623,9 +634,8 @@
 
 
 
-
-            <!-- ...............meken pallehata code insert krenna epa .....................-->
-            <script src="script.js"></script>
+                <!-- ...............meken pallehata code insert krenna epa .....................-->
+                <script src="script.js"></script>
 </body>
 
 </html>

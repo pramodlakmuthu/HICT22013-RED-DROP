@@ -660,6 +660,35 @@
 
         </div>
     </div>
+    <!-- ================= CONFIRMATION SLIP POP-UP MODAL ================= -->
+    <div id="confirmationModal"
+        class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div
+            class="bg-[#0B1120] border border-emerald-500/50 rounded-2xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative space-y-6 text-center">
+
+            <div
+                class="w-16 h-16 bg-emerald-950 border border-emerald-500 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-2xl shadow-lg shadow-emerald-500/20">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="space-y-1">
+                <h3 class="text-2xl font-extrabold text-emerald-400">Reservation Confirmed!</h3>
+                <p class="text-xs text-gray-400">Your donation slot has been successfully booked with Red Drop.</p>
+            </div>
+            <!-- Ticket / Slip Card -->
+            <div
+                class="bg-[#11192C] border border-gray-800 rounded-xl p-5 text-left text-xs space-y-3.5 relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 bg-red-900/40 text-red-400 font-bold px-3 py-1 text-[10px] rounded-bl-xl border-b border-l border-red-800/60">
+                    Red Drop Slot Slip
+                </div>
+                <div class="space-y-1">
+                    <span class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Donor Details</span>
+                    <p class="font-bold text-gray-100 text-sm" id="popFullName">John Doe</p>
+                    <p class="text-gray-400">NIC: <span id="popNIC" class="text-gray-200 font-mono">199912345678</span>
+                    </p>
+                    <p class="text-gray-400">Contact: <span id="popContact"
+                            class="text-gray-200 font-mono">0771234567</span></p>
+                </div>
 
 
 
@@ -669,9 +698,8 @@
 
 
 
-
-    <!-- ...............meken pallehata code insert krenna epa .....................-->
-    <script src="script.js"></script>
+                <!-- ...............meken pallehata code insert krenna epa .....................-->
+                <script src="script.js"></script>
 </body>
 
 </html>

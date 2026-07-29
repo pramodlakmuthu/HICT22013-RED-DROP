@@ -689,6 +689,49 @@
                     <p class="text-gray-400">Contact: <span id="popContact"
                             class="text-gray-200 font-mono">0771234567</span></p>
                 </div>
+                <hr class="border-gray-800">
+
+                <div class="space-y-1">
+                    <span class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Selected Blood
+                        Bank</span>
+                    <p class="font-bold text-blue-400" id="popBankName">Gampaha General Hospital Blood Bank</p>
+                    <p class="text-gray-400" id="popBankLocation">Gampaha District</p>
+                </div>
+                <hr class="border-gray-800">
+
+                <div class="grid grid-cols-2 gap-2 bg-blue-950/30 p-2.5 rounded-lg border border-blue-900/40">
+                    <div>
+                        <span class="text-[10px] text-gray-400 block">Date</span>
+                        <span id="popDate" class="font-bold text-gray-100">2026-03-01</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-gray-400 block">Time</span>
+                        <span id="popTime" class="font-bold text-gray-100">10:00 AM</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-[11px] text-gray-400 leading-relaxed">
+                Please present your National Identity Card (NIC) upon arrival at the blood bank.
+            </p>
+
+            <button onclick="closeConfirmationModal()"
+                class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl shadow-lg transition text-xs">
+                Close Slip
+            </button>
+
+        </div>
+    </div>
+    <!-- ================= FOOTER ================= -->
+    <footer class="w-full bg-[#03050A] border-t border-gray-900/80 mt-16 pt-12 pb-8 px-6 text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2.5 cursor-pointer" onclick="showView('home')">
+                    <div
+                        class="relative flex items-center justify-center w-7 h-7 rounded-full bg-red-950/80 border border-red-800">
+                        <i class="fa-solid fa-droplet text-red-500 text-xs"></i>
+                    </div>
+                    
 
 
 
@@ -696,10 +739,8 @@
 
 
 
-
-
-                <!-- ...............meken pallehata code insert krenna epa .....................-->
-                <script src="script.js"></script>
+                    <!-- ...............meken pallehata code insert krenna epa .....................-->
+                    <script src="script.js"></script>
 </body>
 
 </html>

@@ -192,23 +192,44 @@ function closeConfirmationModal() {
 
 // View Switcher Function (enforces login for protected views)
 function showView(viewId) {
-  const unprotected = ['home', 'login', 'register', 'about'];
-  const logged = localStorage.getItem('reddrop_loggedIn') === '1';
-  if (!logged && !unprotected.includes(viewId)) {
-    document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
-    const loginView = document.getElementById('view-login');
-    if (loginView) loginView.classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    return;
-  }
+    const unprotected = ['home', 'login', 'register', 'about'];
+    const logged = localStorage.getItem('reddrop_loggedIn') === '1';
+    if (!logged && !unprotected.includes(viewId)) {
+        document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+        const loginView = document.getElementById('view-login');
+        if (loginView) loginView.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+    }
 
-  document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
-  const targetView = document.getElementById('view-' + viewId);
-  if (targetView) {
-    targetView.classList.remove('hidden');
-  }
-  if (viewId === 'locator') {
-    filterBloodBanks();
-  }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+    const targetView = document.getElementById('view-' + viewId);
+    if (targetView) {
+        targetView.classList.remove('hidden');
+    }
+    if (viewId === 'locator') {
+        filterBloodBanks();
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Toggle Authentication UI State
+function toggleAuth(isLoggedIn, name = 'User') {
+    const loggedOutDiv = document.getElementById('authActionsLoggedOut');
+    const loggedInDiv = document.getElementById('authActionsLoggedIn');
+    const userNameDisplay = document.getElementById('userNameDisplay');
+
+    if (isLoggedIn) {
+        localStorage.setItem('reddrop_loggedIn', '1');
+        localStorage.setItem('reddrop_user', name);
+        loggedOutDiv.classList.add('hidden');
+        loggedInDiv.classList.remove('hidden');
+        userNameDisplay.innerText = name;
+    } else {
+        localStorage.removeItem('reddrop_loggedIn');
+        localStorage.removeItem('reddrop_user');
+        loggedOutDiv.classList.remove('hidden');
+        loggedInDiv.classList.add('hidden');
+        showView('home');
+    }
 }

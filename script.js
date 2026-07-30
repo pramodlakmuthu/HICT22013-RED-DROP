@@ -139,3 +139,25 @@ function filterBloodBanks() {
 
     container.innerHTML = htmlContent;
 }
+
+// Reservation Modal Controls
+function openReservationModal(name, location, district) {
+    currentSelectedBank = { name, location, district };
+    document.getElementById('resModalBankTitle').innerText = `${name} (${district})`;
+
+    const today = new Date().toISOString().split('T')[0];
+    const dateInput = document.getElementById('resDate');
+    dateInput.value = today;
+    dateInput.min = today;
+
+    const currentUserName = document.getElementById('userNameDisplay').innerText;
+    if (currentUserName && currentUserName !== 'User') {
+        document.getElementById('resFullName').value = currentUserName;
+    }
+
+    document.getElementById('reservationModal').classList.remove('hidden');
+}
+
+function closeReservationModal() {
+    document.getElementById('reservationModal').classList.add('hidden');
+}

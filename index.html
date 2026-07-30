@@ -610,17 +610,192 @@
                 class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
+            <div class="space-y-1 text-center">
+                <h3 class="text-2xl font-extrabold text-blue-400">Reserve Donation Slot</h3>
+                <p id="resModalBankTitle" class="text-xs text-gray-300 font-semibold">Gampaha General Hospital Blood
+                    Bank</p>
+            </div>
+            <form onsubmit="handleReservationSubmit(event)" class="space-y-4 text-xs text-gray-300">
+                <div>
+                    <label class="block font-semibold mb-1">Full Name</label>
+                    <input type="text" id="resFullName" required placeholder="Enter your full name"
+                        class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 focus:outline-none focus:border-blue-500 transition">
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">National ID (NIC) Number</label>
+                    <input type="text" id="resNIC" required placeholder="e.g. 199812345678 or 981234567V"
+                        class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 focus:outline-none focus:border-blue-500 transition">
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Contact Phone Number</label>
+                    <input type="tel" id="resContact" required placeholder="e.g. 0771234567"
+                        class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 focus:outline-none focus:border-blue-500 transition">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-semibold mb-1">Preferred Date</label>
+                        <input type="date" id="resDate" required
+                            class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-3 py-2.5 text-gray-100 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-1">Preferred Time</label>
+                        <select id="resTime" required
+                            class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-3 py-2.5 text-gray-100 focus:outline-none focus:border-blue-500 transition">
+                            <option value="08:30 AM">08:30 AM</option>
+                            <option value="10:00 AM" selected>10:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="01:30 PM">01:30 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pt-2 flex gap-3">
+                    <button type="button" onclick="closeReservationModal()"
+                        class="w-1/2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold py-2.5 rounded-xl transition">Cancel</button>
+                    <button type="submit"
+                        class="w-1/2 bg-brand-blue hover:bg-blue-600 text-white font-bold py-2.5 rounded-xl shadow-lg transition">Confirm
+                        Booking</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- ================= CONFIRMATION SLIP POP-UP MODAL ================= -->
+    <div id="confirmationModal"
+        class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div
+            class="bg-[#0B1120] border border-emerald-500/50 rounded-2xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative space-y-6 text-center">
+
+            <div
+                class="w-16 h-16 bg-emerald-950 border border-emerald-500 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-2xl shadow-lg shadow-emerald-500/20">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="space-y-1">
+                <h3 class="text-2xl font-extrabold text-emerald-400">Reservation Confirmed!</h3>
+                <p class="text-xs text-gray-400">Your donation slot has been successfully booked with Red Drop.</p>
+            </div>
+            <!-- Ticket / Slip Card -->
+            <div
+                class="bg-[#11192C] border border-gray-800 rounded-xl p-5 text-left text-xs space-y-3.5 relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 bg-red-900/40 text-red-400 font-bold px-3 py-1 text-[10px] rounded-bl-xl border-b border-l border-red-800/60">
+                    Red Drop Slot Slip
+                </div>
+                <div class="space-y-1">
+                    <span class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Donor Details</span>
+                    <p class="font-bold text-gray-100 text-sm" id="popFullName">John Doe</p>
+                    <p class="text-gray-400">NIC: <span id="popNIC" class="text-gray-200 font-mono">199912345678</span>
+                    </p>
+                    <p class="text-gray-400">Contact: <span id="popContact"
+                            class="text-gray-200 font-mono">0771234567</span></p>
+                </div>
+                <hr class="border-gray-800">
+
+                <div class="space-y-1">
+                    <span class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Selected Blood
+                        Bank</span>
+                    <p class="font-bold text-blue-400" id="popBankName">Gampaha General Hospital Blood Bank</p>
+                    <p class="text-gray-400" id="popBankLocation">Gampaha District</p>
+                </div>
+                <hr class="border-gray-800">
+
+                <div class="grid grid-cols-2 gap-2 bg-blue-950/30 p-2.5 rounded-lg border border-blue-900/40">
+                    <div>
+                        <span class="text-[10px] text-gray-400 block">Date</span>
+                        <span id="popDate" class="font-bold text-gray-100">2026-03-01</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-gray-400 block">Time</span>
+                        <span id="popTime" class="font-bold text-gray-100">10:00 AM</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-[11px] text-gray-400 leading-relaxed">
+                Please present your National Identity Card (NIC) upon arrival at the blood bank.
+            </p>
+
+            <button onclick="closeConfirmationModal()"
+                class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl shadow-lg transition text-xs">
+                Close Slip
+            </button>
+
+        </div>
+    </div>
+    <!-- ================= FOOTER ================= -->
+    <footer class="w-full bg-[#03050A] border-t border-gray-900/80 mt-16 pt-12 pb-8 px-6 text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2.5 cursor-pointer" onclick="showView('home')">
+                    <div
+                        class="relative flex items-center justify-center w-7 h-7 rounded-full bg-red-950/80 border border-red-800">
+                        <i class="fa-solid fa-droplet text-red-500 text-xs"></i>
+                    </div>
+                    <span class="text-base font-extrabold text-white tracking-tight">Red <span
+                            class="text-red-500">Drop</span></span>
+                </div>
+                <p class="text-gray-400 leading-relaxed text-[12px]">
+                    Connecting life-saving donors with nearby blood banks across Sri Lanka. Simple, fast, and impactful.
+                </p>
+            </div>
+            <div class="space-y-2">
+                <h4 class="text-gray-200 font-semibold mb-3 text-sm">Quick Links</h4>
+                <ul class="space-y-2 text-[12px]">
+                    <li><button onclick="showView('home')" class="hover:text-brand-blue transition">Home</button></li>
+                    <li><button onclick="showView('about')" class="hover:text-brand-blue transition">About Red
+                            Drop</button></li>
+                    <li><button onclick="showView('eligibility')" class="hover:text-brand-blue transition">Eligibility
+                            Checker</button></li>
+                    <li><button onclick="showView('process')" class="hover:text-brand-blue transition">Donation
+                            Process</button></li>
+                </ul>
+            </div>
+            <div class="space-y-2">
+                <h4 class="text-gray-200 font-semibold mb-3 text-sm">Emergency & Support</h4>
+                <ul class="space-y-2.5 text-[12px] text-gray-400">
+                    <li class="flex items-center space-x-2.5">
+                        <i class="fa-solid fa-phone text-red-500 text-xs"></i>
+                        <span>National Blood Helpline: +94 11 269 8415</span>
+                    </li>
+                    <li class="flex items-center space-x-2.5">
+                        <i class="fa-solid fa-envelope text-blue-400 text-xs"></i>
+                        <span>support@reddrop.org</span>
+                    </li>
+                    <li class="flex items-center space-x-2.5">
+                        <i class="fa-solid fa-hospital text-emerald-400 text-xs"></i>
+                        <span>Sri Lanka Blood Transfusion Service</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-gray-200 font-semibold mb-1 text-sm">Developed By</h4>
+                <div
+                    class="inline-flex items-center space-x-2 bg-gray-900/90 border border-gray-800 px-3.5 py-2 rounded-xl">
+                    <i class="fa-solid fa-bug text-red-400 text-xs"></i>
+                    <span class="text-gray-200 font-bold text-xs tracking-wide">Bugs Creators</span>
+                </div>
+                <p class="text-[11px] text-gray-500 leading-relaxed">
+                    Designed with care to support community health and digital innovation.
+                </p>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto pt-6 border-t border-gray-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500 gap-3">
+            <p>© 2026 Red Drop. All rights reserved.</p>
+            <div class="flex items-center space-x-1">
+                <span>Crafted with</span>
+                <i class="fa-solid fa-heart text-red-500 text-[10px]"></i>
+                <span>by <strong class="text-blue-400 font-semibold">Bugs Creators</strong></span>
+            </div>
+        </div>
+    </footer>
 
 
 
 
 
-
-
-
-
-            <!-- ...............meken pallehata code insert krenna epa .....................-->
-            <script src="script.js"></script>
+    <!-- ...............meken pallehata code insert krenna epa .....................-->
+    <script src="script.js"></script>
 </body>
 
 </html>

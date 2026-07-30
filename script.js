@@ -315,3 +315,47 @@ if (illness) {
 if (alcohol) {
     tempReasons.push("Must abstain from alcohol intake for at least 24 hours prior to donation.");
 }
+
+// Render Dynamic Output Box
+const resultBox = document.getElementById('eligibilityResultBox');
+resultBox.classList.remove('hidden');
+
+if (permanentReasons.length > 0) {
+    resultBox.className = "bg-red-950/40 border border-red-600/50 rounded-2xl p-6 text-left space-y-4";
+    resultBox.innerHTML = `
+      <div class="flex items-center space-x-2 text-red-400 font-bold text-lg">
+        <i class="fa-solid fa-circle-xmark"></i>
+        <span>Not Eligible to Donate</span>
+      </div>
+      <p class="text-xs text-red-200/80">Based on medical safety regulations, you are currently ineligible due to the following reason(s):</p>
+      <ul class="list-disc list-inside text-xs text-red-300 space-y-1.5">
+        ${permanentReasons.map(r => `<li>${r}</li>`).join('')}
+      </ul>
+    `;
+} else if (tempReasons.length > 0) {
+    resultBox.className = "bg-amber-950/40 border border-amber-600/50 rounded-2xl p-6 text-left space-y-4";
+    resultBox.innerHTML = `
+      <div class="flex items-center space-x-2 text-amber-400 font-bold text-lg">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span>Temporarily Deferred</span>
+      </div>
+      <p class="text-xs text-amber-200/80">You cannot donate today, but you will be eligible once the following condition(s) are resolved:</p>
+      <ul class="list-disc list-inside text-xs text-amber-300 space-y-1.5">
+        ${tempReasons.map(r => `<li>${r}</li>`).join('')}
+      </ul>
+    `;
+} else {
+    resultBox.className = "bg-emerald-950/40 border border-emerald-600/50 rounded-2xl p-6 text-center space-y-4";
+    resultBox.innerHTML = `
+      <div class="flex items-center justify-center space-x-2 text-emerald-400 font-bold text-lg">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>🩸 You are eligible to donate!</span>
+      </div>
+      <p class="text-xs text-emerald-200/80 max-w-md mx-auto">
+        You meet all medical and safety criteria. Please ensure you eat a meal and stay hydrated before your appointment.
+      </p>
+      <button onclick="showView('locator')" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs px-6 py-2.5 rounded-full transition shadow-lg">
+        Proceed to Blood Bank Locator
+      </button>
+    `;
+}

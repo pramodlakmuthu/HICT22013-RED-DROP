@@ -285,3 +285,33 @@ function handleEligibilitySubmit(e) {
     if (weight < 50) {
         permanentReasons.push("Minimum body weight required to donate safely is 50 kg.");
     }
+}
+
+// Temporary Deferral Checks
+if (lastDonationInput) {
+    const lastDate = new Date(lastDonationInput);
+    const today = new Date();
+    const diffTime = Math.abs(today - lastDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const requiredInterval = 120; // 4 months standard gap
+
+    if (diffDays < requiredInterval) {
+        const daysRemaining = requiredInterval - diffDays;
+        const nextEligibleDate = new Date(lastDate);
+        nextEligibleDate.setDate(nextEligibleDate.getDate() + requiredInterval);
+        tempReasons.push(`A minimum 4-month (120 days) gap is required between donations. You can donate again in ~${daysRemaining} days (on ${nextEligibleDate.toISOString().split('T')[0]}).`);
+    }
+}
+
+if (tattoo) {
+    tempReasons.push("Tattoos or body piercings require a 12-month waiting period.");
+}
+if (pregnant) {
+    tempReasons.push("Donation is deferred during pregnancy, breastfeeding, or within 12 months post-delivery.");
+}
+if (illness) {
+    tempReasons.push("Must be free of fever/cold symptoms and off antibiotics for at least 14 days.");
+}
+if (alcohol) {
+    tempReasons.push("Must abstain from alcohol intake for at least 24 hours prior to donation.");
+}

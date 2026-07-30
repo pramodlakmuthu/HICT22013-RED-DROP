@@ -161,3 +161,31 @@ function openReservationModal(name, location, district) {
 function closeReservationModal() {
     document.getElementById('reservationModal').classList.add('hidden');
 }
+
+
+
+// Handle Reservation Form Submission
+function handleReservationSubmit(e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById('resFullName').value;
+    const nic = document.getElementById('resNIC').value;
+    const contact = document.getElementById('resContact').value;
+    const date = document.getElementById('resDate').value;
+    const time = document.getElementById('resTime').value;
+
+    document.getElementById('popFullName').innerText = fullName;
+    document.getElementById('popNIC').innerText = nic;
+    document.getElementById('popContact').innerText = contact;
+    document.getElementById('popBankName').innerText = currentSelectedBank.name;
+    document.getElementById('popBankLocation').innerText = `${currentSelectedBank.location} (${currentSelectedBank.district} District)`;
+    document.getElementById('popDate').innerText = date;
+    document.getElementById('popTime').innerText = time;
+
+    closeReservationModal();
+    document.getElementById('confirmationModal').classList.remove('hidden');
+}
+
+function closeConfirmationModal() {
+    document.getElementById('confirmationModal').classList.add('hidden');
+}

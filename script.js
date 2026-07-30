@@ -93,3 +93,49 @@ const bloodBankDatabase = {
 };
 
 
+// Filter and Render Blood Banks for Selected District
+function filterBloodBanks() {
+    const selectedDistrict = document.getElementById('districtSelect').value;
+    const container = document.getElementById('bloodBankContainer');
+    const banks = bloodBankDatabase[selectedDistrict];
+
+    if (!banks || banks.length === 0) {
+        container.innerHTML = `
+      <div class="bg-[#11192C] border border-gray-800 rounded-xl p-6 text-center text-gray-400 text-xs">
+        No blood banks found in ${selectedDistrict} district.
+      </div>`;
+        return;
+    }
+
+    let htmlContent = '';
+    banks.forEach((bank) => {
+        const safeName = bank.name.replace(/'/g, "\\'");
+        const safeLocation = bank.location.replace(/'/g, "\\'");
+
+        htmlContent += `
+      <div class="bg-[#11192C] border border-blue-900/50 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition hover:border-blue-700/60">
+        <div class="space-y-1">
+          <h4 class="font-bold text-gray-100 text-sm">${bank.name}</h4>
+          <p class="text-xs text-gray-400 flex items-center space-x-1">
+            <i class="fa-solid fa-location-dot text-blue-400"></i>
+            <span>${bank.location} (${selectedDistrict} District)</span>
+          </p>
+          <p class="text-[11px] text-gray-400 flex items-center space-x-4 pt-1">
+            <span>⏰ ${bank.hours}</span>
+            <span>📞 ${bank.phone}</span>
+          </p>
+        </div>
+        <div class="flex items-center space-x-3">
+          ${bank.available
+                ? `<span class="bg-emerald-950 border border-emerald-600/60 text-emerald-400 text-[10px] font-bold px-3 py-1 rounded-full">Available</span>
+               <button onclick="openReservationModal('${safeName}', '${safeLocation}', '${selectedDistrict}')" class="bg-brand-blue hover:bg-blue-600 text-white text-xs font-bold px-5 py-2 rounded-lg transition shadow-md">Reserve</button>`
+                : `<span class="bg-amber-950 border border-amber-700/60 text-amber-400 text-[10px] font-bold px-3 py-1 rounded-full">Unavailable</span>
+               <button disabled class="bg-gray-800 text-gray-500 cursor-not-allowed text-xs font-bold px-5 py-2 rounded-lg">Reserve</button>`
+            }
+        </div>
+      </div>
+    `;
+    });
+
+    container.innerHTML = htmlContent;
+}

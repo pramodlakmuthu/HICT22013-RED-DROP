@@ -1,3 +1,5 @@
+let currentSelectedBank = { name: '', location: '', district: '' };
+
 const bloodBankDatabase = {
     "Ampara": [
         { name: "Ampara District General Hospital Blood Bank", location: "Ampara Town", hours: "08:00 - 16:00", phone: "+94 63 222 2224", available: true },
@@ -89,3 +91,5 @@ const bloodBankDatabase = {
         { name: "Vavuniya District General Hospital Blood Bank", location: "Vavuniya Town", hours: "08:00 - 16:00", phone: "+94 24 222 2261", available: true }
     ]
 };
+
+

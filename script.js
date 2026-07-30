@@ -233,3 +233,55 @@ function toggleAuth(isLoggedIn, name = 'User') {
         showView('home');
     }
 }
+
+// Auth Handlers
+function handleLoginSubmit(e) {
+    e.preventDefault();
+    const emailInput = (e.target.querySelector('input[type="email"]') || {}).value || 'Donor';
+    const displayName = emailInput.split('@')[0] || 'Donor';
+    toggleAuth(true, displayName);
+    showView('home');
+}
+
+function handleRegisterSubmit(e) {
+    e.preventDefault();
+    const nameInput = document.getElementById('regNameInput').value || 'Donor';
+    toggleAuth(true, nameInput);
+    showView('eligibility');
+}
+
+// REAL-WORLD MEDICAL ELIGIBILITY VALIDATOR
+function handleEligibilitySubmit(e) {
+    e.preventDefault();
+
+    const age = parseInt(document.getElementById('eligAge').value);
+    const weight = parseFloat(document.getElementById('eligWeight').value);
+    const donorType = document.getElementById('eligDonorType').value;
+    const lastDonationInput = document.getElementById('eligLastDonation').value;
+
+    const tattoo = document.getElementById('eligTattoo').checked;
+    const pregnant = document.getElementById('eligPregnant').checked;
+    const illness = document.getElementById('eligIllness').checked;
+    const alcohol = document.getElementById('eligAlcohol').checked;
+    const chronic = document.getElementById('eligChronic').checked;
+
+    let permanentReasons = [];
+    let tempReasons = [];
+
+    // Permanent / Critical Medical Checks
+    if (chronic) {
+        permanentReasons.push("History of chronic illness (Heart Disease, Hepatitis B/C, HIV, Cancer, Kidney Disease) prohibits donation for recipient safety.");
+    }
+
+    if (age < 18) {
+        permanentReasons.push("Minimum age for blood donation is 18 years.");
+    } else {
+        const maxAge = (donorType === 'first_time') ? 55 : 60;
+        if (age > maxAge) {
+            permanentReasons.push(`Maximum age for ${donorType === 'first_time' ? 'first-time' : 'regular'} donors is ${maxAge} years.`);
+        }
+    }
+
+    if (weight < 50) {
+        permanentReasons.push("Minimum body weight required to donate safely is 50 kg.");
+    }

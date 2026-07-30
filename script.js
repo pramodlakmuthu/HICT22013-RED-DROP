@@ -359,3 +359,11 @@ if (permanentReasons.length > 0) {
       </button>
     `;
 }
+
+// Initialize application state on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const logged = localStorage.getItem('reddrop_loggedIn') === '1';
+    const name = localStorage.getItem('reddrop_user') || 'User';
+    toggleAuth(logged, name);
+    filterBloodBanks();
+});

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,6 +126,335 @@
                  <!-- ......... text part of middle ......... -->
                   <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
                     Blood donation is a simple act of kindness that can make a huge difference. Join Red Drop and help save lives today.
+=======
+
+
+
+        <!-- ................... bodini start here .....................-->
+        <!-- 2. LOGIN VIEW -->
+        <section id="view-login" class="view-section hidden px-4 py-12 flex justify-center items-center">
+            <div
+                class="w-full max-w-lg bg-[#0B1120] border border-red-900/40 rounded-2xl p-8 sm:p-10 shadow-2xl space-y-6 text-center">
+                <div class="space-y-1">
+                    <h2 class="text-3xl font-extrabold text-red-500">Red Drop</h2>
+                    <h3 class="text-lg font-semibold text-gray-200">Welcome Back</h3>
+                    <p class="text-xs text-gray-400">Login to check your eligibility and reserve your donation slot.</p>
+                </div>
+                <form onsubmit="handleLoginSubmit(event)" class="space-y-5 text-left pt-2">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-2">Email address</label>
+                        <input type="email" required placeholder="you@example.com"
+                            class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-2">Password</label>
+                        <input type="password" required placeholder="Enter your password"
+                            class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-3 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                    <button type="submit"
+                        class="w-full btn-gradient text-white font-semibold py-3 rounded-xl shadow-lg hover:opacity-95 transition text-sm">
+                        Login
+                    </button>
+                </form>
+
+
+                <div class="flex items-center justify-between pt-4">
+                    <button onclick="showView('register')"
+                        class="border border-red-900/60 text-red-300 hover:bg-red-950/30 text-xs px-4 py-2 rounded-full transition">
+                        New here? Register
+                    </button>
+
+                    <button onclick="showView('home')"
+                        class="bg-brand-blue hover:bg-blue-600 text-white text-xs font-medium px-5 py-2 rounded-full transition">
+                        Back to Home
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- 3. REGISTER VIEW -->
+        <section id="view-register" class="view-section hidden px-4 py-12 flex justify-center items-center">
+            <div
+                class="w-full max-w-lg bg-[#0B1120] border border-red-900/40 rounded-2xl p-8 sm:p-10 shadow-2xl space-y-6 text-center">
+                <div class="space-y-1">
+                    <h2 class="text-3xl font-extrabold text-red-500">Red Drop</h2>
+                    <h3 class="text-lg font-semibold text-gray-200">Join Red Drop</h3>
+                    <p class="text-xs text-gray-400">Create your account and start saving lives.</p>
+                </div>
+
+                <form onsubmit="handleRegisterSubmit(event)" class="space-y-4 text-left pt-2">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Full name</label>
+                        <input type="text" id="regNameInput" required placeholder="Your full name"
+                            class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Email address</label>
+                        <input type="email" required placeholder="you@example.com"
+                            class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Password</label>
+                        <input type="password" required placeholder="Choose a password"
+                            class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Confirm password</label>
+                        <input type="password" required placeholder="Confirm your password"
+                            class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+
+                    <button type="submit"
+                        class="w-full btn-gradient text-white font-semibold py-3 rounded-xl shadow-lg hover:opacity-95 transition text-sm mt-2">
+                        Register
+                    </button>
+                </form>
+                <div class="flex items-center justify-between pt-4">
+                    <button onclick="showView('login')"
+                        class="border border-red-900/60 text-red-300 hover:bg-red-950/30 text-xs px-4 py-2 rounded-full transition">
+                        Already have an account? Login
+                    </button>
+                    <button onclick="showView('home')"
+                        class="bg-brand-blue hover:bg-blue-600 text-white text-xs font-medium px-5 py-2 rounded-full transition">
+                        Back to Home
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- 4. REAL-WORLD ELIGIBILITY CHECKER VIEW -->
+        <section id="view-eligibility" class="view-section hidden px-4 py-12 flex justify-center items-center">
+            <div
+                class="w-full max-w-2xl bg-[#0B1120] border border-blue-900/40 rounded-2xl p-6 sm:p-10 shadow-2xl space-y-6">
+
+                <div class="text-center space-y-1">
+                    <h2 class="text-3xl font-extrabold text-blue-400">Eligibility Checker</h2>
+                    <p class="text-xs text-gray-400">Compliant with National Blood Transfusion Service (NBTS) Safety
+                        Guidelines</p>
+                </div>
+
+                <div
+                    class="bg-blue-950/50 border border-blue-800/60 rounded-xl p-3 text-center text-xs font-medium text-blue-200">
+                    <span class="font-bold"><i class="fa-solid fa-shield-halved mr-1"></i> Medical Safety:</span>
+                    Complete all fields to check if you are eligible to donate today.
+                </div>
+                <form onsubmit="handleEligibilitySubmit(event)" class="space-y-5 text-sm text-gray-300">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">1. Age (Years)</label>
+                            <input type="number" id="eligAge" required value="24" min="15" max="80"
+                                class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 text-xs focus:outline-none focus:border-blue-500 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">2. Body Weight (kg)</label>
+                            <input type="number" id="eligWeight" required value="62" min="30" max="200"
+                                class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 text-xs focus:outline-none focus:border-blue-500 transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">3. Donor Type</label>
+                            <select id="eligDonorType" required
+                                class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 text-xs focus:outline-none focus:border-blue-500 transition">
+                                <option value="first_time">First-Time Donor (Max Age 55)</option>
+                                <option value="regular" selected>Regular / Repeat Donor (Max Age 60)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">4. Date of Last Donation (Optional)</label>
+                            <input type="date" id="eligLastDonation"
+                                class="w-full bg-[#161F33] border border-gray-700/60 rounded-xl px-4 py-2.5 text-gray-100 text-xs focus:outline-none focus:border-blue-500 transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold mb-2">5. Temporary Lifestyle & Health
+                            Conditions</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                            <label
+                                class="flex items-center space-x-2.5 cursor-pointer bg-[#11192C] p-2.5 rounded-lg border border-gray-800">
+                                <input type="checkbox" id="eligTattoo"
+                                    class="rounded border-gray-700 bg-[#161F33] text-blue-500 focus:ring-0">
+                                <span>Tattoo or Piercing (&lt; 12 months)</span>
+                            </label>
+                            <label
+                                class="flex items-center space-x-2.5 cursor-pointer bg-[#11192C] p-2.5 rounded-lg border border-gray-800">
+                                <input type="checkbox" id="eligPregnant"
+                                    class="rounded border-gray-700 bg-[#161F33] text-blue-500 focus:ring-0">
+                                <span>Pregnant / Breastfeeding</span>
+                            </label>
+                            <label
+                                class="flex items-center space-x-2.5 cursor-pointer bg-[#11192C] p-2.5 rounded-lg border border-gray-800">
+                                <input type="checkbox" id="eligIllness"
+                                    class="rounded border-gray-700 bg-[#161F33] text-blue-500 focus:ring-0">
+                                <span>Cold / Fever / On Antibiotics</span>
+                            </label>
+                            <label
+                                class="flex items-center space-x-2.5 cursor-pointer bg-[#11192C] p-2.5 rounded-lg border border-gray-800">
+                                <input type="checkbox" id="eligAlcohol"
+                                    class="rounded border-gray-700 bg-[#161F33] text-blue-500 focus:ring-0">
+                                <span>Alcohol intake in last 24 hours</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold mb-2">6. Medical History</label>
+                        <label
+                            class="flex items-center space-x-2.5 cursor-pointer bg-[#11192C] p-3 rounded-lg border border-gray-800 text-xs">
+                            <input type="checkbox" id="eligChronic"
+                                class="rounded border-gray-700 bg-[#161F33] text-blue-500 focus:ring-0">
+                            <span>History of Heart Disease, Hepatitis B/C, HIV/AIDS, Syphilis, Cancer, or Kidney
+                                Disease</span>
+                        </label>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-brand-blue hover:bg-blue-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-blue-500/20 transition text-xs uppercase tracking-wider">
+                        Validate My Eligibility
+                    </button>
+                </form>
+
+                <!-- Dynamic Eligibility Result Box -->
+                <div id="eligibilityResultBox" class="hidden"></div>
+
+            </div>
+        </section>
+
+        <!-- 5. BLOOD BANK LOCATOR VIEW(my part) -->
+        <section id="view-locator" class="view-section hidden px-4 py-12 flex justify-center items-center">
+            <div
+                class="w-full max-w-3xl bg-[#0B1120] border border-blue-900/40 rounded-2xl p-6 sm:p-10 shadow-2xl space-y-6">
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-blue-400">Blood Bank Locator</h2>
+                    <p class="text-xs text-gray-400">Select any district in Sri Lanka to find nearby blood banks and
+                        reserve a slot.</p>
+                    </d1iv>
+                    <div
+                        class="bg-blue-950/30 border border-blue-800/40 rounded-xl p-3 text-center text-xs text-blue-200">
+                        Note: Please ensure you have completed the eligibility check before reserving.
+                    </div>
+                    <!-- District Selection Filter -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-gray-300">Choose District (All 25 Districts
+                            Available)</label>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <select id="districtSelect" onchange="filterBloodBanks()"
+                                class="flex-grow bg-[#161F33] border border-blue-500/50 rounded-xl px-4 py-3 text-sm text-gray-100 outline-none focus:border-blue-400">
+                                <option value="Ampara">Ampara</option>
+                                <option value="Anuradhapura">Anuradhapura</option>
+                                <option value="Badulla">Badulla</option>
+                                <option value="Batticaloa">Batticaloa</option>
+                                <option value="Colombo">Colombo</option>
+                                <option value="Galle">Galle</option>
+                                <option value="Gampaha" selected>Gampaha</option>
+                                <option value="Hambantota">Hambantota</option>
+                                <option value="Jaffna">Jaffna</option>
+                                <option value="Kalutara">Kalutara</option>
+                                <option value="Kandy">Kandy</option>
+                                <option value="Kegalle">Kegalle</option>
+                                <option value="Kilinochchi">Kilinochchi</option>
+                                <option value="Kurunegala">Kurunegala</option>
+                                <option value="Mannar">Mannar</option>
+                                <option value="Matale">Matale</option>
+                                <option value="Matara">Matara</option>
+                                <option value="Monaragala">Monaragala</option>
+                                <option value="Mullaitivu">Mullaitivu</option>
+                                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                <option value="Polonnaruwa">Polonnaruwa</option>
+                                <option value="Puttalam">Puttalam</option>
+                                <option value="Ratnapura">Ratnapura</option>
+                                <option value="Trincomalee">Trincomalee</option>
+                                <option value="Vavuniya">Vavuniya</option>
+                            </select>
+                            <button onclick="filterBloodBanks()"
+                                class="bg-brand-blue hover:bg-blue-600 text-white font-bold text-xs px-6 py-3 rounded-xl transition shadow-md whitespace-nowrap">
+                                Search District
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <button onclick="showView('eligibility')"
+                            class="bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs px-4 py-2 rounded-full transition">
+                            Back to Eligibility Checker
+                        </button>
+                    </div>
+                    <!-- Dynamic Blood Bank Container -->
+                    <div id="bloodBankContainer" class="space-y-4 pt-2">
+                        <!-- Dynamically populated via JavaScript -->
+                    </div>
+                </div>
+        </section>
+        <!-- 6. DONATION PROCESS VIEW -->
+        <section id="view-process" class="view-section hidden px-4 py-16">
+            <div class="max-w-6xl mx-auto space-y-16 text-center">
+
+                <h2 class="text-4xl font-extrabold text-blue-400">Donation Process</h2>
+
+                <!-- Process Steps Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pt-6">
+
+                    <div class="flex flex-col items-center space-y-4">
+                        <div
+                            class="w-24 h-24 rounded-full bg-blue-600 glow-blue flex items-center justify-center text-white text-3xl mb-2 transition transform hover:scale-105">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-100 text-base">Registration</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed max-w-[180px]">Quick form & medical history</p>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-4">
+                        <div
+                            class="w-24 h-24 rounded-full bg-amber-500 glow-orange flex items-center justify-center text-white text-3xl mb-2 transition transform hover:scale-105">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-100 text-base">Screening</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed max-w-[180px]">Health check-up & hemoglobin test
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-4">
+                        <div
+                            class="w-24 h-24 rounded-full bg-purple-500 glow-purple flex items-center justify-center text-white text-3xl mb-2 transition transform hover:scale-105">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-100 text-base">Donation</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed max-w-[180px]">350-450ml of blood taken safely
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-4">
+                        <div
+                            class="w-24 h-24 rounded-full bg-teal-400 glow-teal flex items-center justify-center text-white text-3xl mb-2 transition transform hover:scale-105">
+                            <i class="fa-solid fa-cookie-bite"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-100 text-base">Refreshment</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed max-w-[180px]">Rest, snacks & hydration</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- 7. ABOUT VIEW -->
+        <section id="view-about" class="view-section hidden px-4 py-12">
+            <div class="max-w-6xl mx-auto space-y-12">
+
+                <div class="text-center space-y-3">
+                    <span
+                        class="inline-block bg-blue-950 border border-blue-800 text-blue-300 text-[11px] font-extrabold uppercase px-4 py-1 rounded-full tracking-widest">OUR
+                        MISSION</span>
+                    <h2 class="text-4xl font-extrabold text-blue-300">Why Blood Donation Matters</h2>
+                    <p class="text-xs sm:text-sm text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                        Every second, someone somewhere needs blood. Your simple decision can give someone another
+                        birthday, another laugh, another chance at life.
+>>>>>>> Stashed changes
                     </p>
 
                     <!-- .......... check if you can donate button ............ -->
